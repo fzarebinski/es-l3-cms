@@ -33,9 +33,9 @@ namespace es_l3_cms
             return this.falseSkip;
         }
 
-        public int GetSkip(bool decision)
+        public int GetSkip(int decision)
         {
-            return (decision ? this.trueSkip : this.falseSkip);
+            return (decision == 0 ? this.falseSkip : this.trueSkip);
         }
     }
 }

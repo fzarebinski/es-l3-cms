@@ -9,6 +9,9 @@ namespace es_l3_cms
     {
         static void Main(string[] args)
         {
+            ExpertUtil.ReadDecisions();
+            ExpertUtil.ReadSolutions();
+            ExpertUtil.PrintQuestion();
         }
     }
 }

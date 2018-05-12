@@ -8,15 +8,15 @@ namespace es_l3_cms
     class Solution
     {
         private List<List<int>> mapper = new List<List<int>>();
-        private string reply;
+        private string solution;
 
-        public Solution(string reply, int[][] mapper)
+        public Solution(string solution, int[,] mapper)
         {
-            this.reply = reply;
+            this.solution = solution;
             
-            foreach (int[] map in mapper)
+            for (int i = 0; i < (mapper.Length / 2); i++)
             {
-                this.AddMap(map[0], map[1]);
+                this.AddMap(mapper[i, 0], mapper[i, 1]);
             }
         }
 
@@ -47,6 +47,11 @@ namespace es_l3_cms
                 return (decisionMap.Count() == 0);
             }
             return false;
+        }
+
+        public string GetSolution()
+        {
+            return this.solution;
         }
     }
 }
