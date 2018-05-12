@@ -63,7 +63,6 @@ namespace es_l3_cms
             int answer = ExpertUtil.Ask();
 
             Mapper.Add(ExpertUtil.PrepareMap(it, answer));
-            Console.WriteLine("Added it: " + it + " answer: " + answer);
             Console.WriteLine();
 
             ExpertUtil.PrintQuestion(ExpertUtil.Decisions[it].GetSkip(answer));
