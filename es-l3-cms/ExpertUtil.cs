@@ -8,7 +8,7 @@ namespace es_l3_cms
     class ExpertUtil
     {
         public static Decision[] Decisions = new Decision[12];
-        public static Solution[] Solutions = new Solution[11];
+        public static Solution[] Solutions = new Solution[14];
         public static List<List<int>> Mapper = new List<List<int>>();
 
         public static void ReadDecisions()
@@ -32,35 +32,69 @@ namespace es_l3_cms
             ExpertUtil.Solutions[0] = new Solution("Zainstaluj go", new int[,] { { 0, 0 } });
             ExpertUtil.Solutions[1] = new Solution("Problem opisany w błędzie", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 1 } });
             ExpertUtil.Solutions[2] = new Solution("Strona działa", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 1 } });
+            ExpertUtil.Solutions[3] = new Solution("Podłacz ją", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 0 } });
+            ExpertUtil.Solutions[4] = new Solution("Opłać ją", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 0 } });
+            ExpertUtil.Solutions[5] = new Solution("Serwer padł", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 0 } });
+            ExpertUtil.Solutions[6] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 1 }, { 10, 0 } });
+            ExpertUtil.Solutions[7] = new Solution("Cofnij zmiany", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 1 }, { 10, 1 }, { 9, 1 } });
+            ExpertUtil.Solutions[8] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 1 }, { 10, 1 }, { 9, 0 } });
+            ExpertUtil.Solutions[9] = new Solution("Cofnij zmiany", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 0 }, { 9, 1 } });
+            ExpertUtil.Solutions[10] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 0 }, { 9, 0 } });
+            ExpertUtil.Solutions[11] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 0 }, { 8, 0 } });
+            ExpertUtil.Solutions[12] = new Solution("Strona jest prywatna", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 1 }, { 8, 1 }, { 11, 1 } });
+            ExpertUtil.Solutions[13] = new Solution("Usuń wszystkie skrypty", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 1 }, { 8, 1 }, { 11, 0 } });
         }
 
         public static void PrintQuestion(int it = 0)
         {
             if (it < 0)
             {
-                foreach (Solution solution in ExpertUtil.Solutions)
-                {
-                    if (solution.CheckSolution(ExpertUtil.Mapper))
-                    {
-                        Console.WriteLine(solution.GetSolution()); Console.Read();
-                        Console.Read();
-                        break;
-                    }
-                }
+                ExpertUtil.PrintSolution();
                 return;
             }
 
             Console.WriteLine(ExpertUtil.Decisions[it].GetQuestion());
             Console.Write("Odpowiedz [1 - Tak], [0 - Nie]: ");
 
-            int answer = int.Parse(Console.ReadLine());
+            int answer = ExpertUtil.Ask();
 
+            Mapper.Add(ExpertUtil.PrepareMap(it, answer));
+            Console.WriteLine("Added it: " + it + " answer: " + answer);
+            Console.WriteLine();
+
+            ExpertUtil.PrintQuestion(ExpertUtil.Decisions[it].GetSkip(answer));
+        }
+
+        public static void PrintSolution()
+        {
+            foreach (Solution solution in ExpertUtil.Solutions)
+            {
+                if (solution.CheckSolution(ExpertUtil.Mapper))
+                {
+                    Console.WriteLine(solution.GetSolution());
+                    Console.Read();
+                    return;
+                }
+            }
+
+            Console.WriteLine("Nie znam rozwiązania.");
+            Console.Read();
+            return;
+
+        }
+
+        public static List<int> PrepareMap(int it, int answer)
+        {
             List<int> list = new List<int>();
             list.Add(it);
             list.Add(answer);
-            Mapper.Add(list);
 
-            ExpertUtil.PrintQuestion(ExpertUtil.Decisions[it].GetSkip(answer));
+            return list;
+        }
+
+        public static int Ask()
+        {
+            return int.Parse(Console.ReadLine());
         }
     }
 }

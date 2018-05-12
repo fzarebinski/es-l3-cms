@@ -33,18 +33,19 @@ namespace es_l3_cms
         {
             if(decisionMap.Count() == this.mapper.Count())
             {
+                var adjusted = 0;
                 for (int i = 0; i < this.mapper.Count(); i++)
                 {
                     for (int j = 0; j < decisionMap.Count(); j++)
                     {
                         if ((this.mapper[i])[0] == (decisionMap[j])[0] && (this.mapper[i])[1] == (decisionMap[j])[1])
                         {
-                            decisionMap.Remove(decisionMap[j]);
+                            adjusted++;
                         }
                     }
                 }
 
-                return (decisionMap.Count() == 0);
+                return (decisionMap.Count() == adjusted);
             }
             return false;
         }
