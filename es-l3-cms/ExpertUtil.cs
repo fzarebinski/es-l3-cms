@@ -7,12 +7,14 @@ namespace es_l3_cms
 {
     class ExpertUtil
     {
-        public static Decision[] Decisions = new Decision[12];
-        public static Solution[] Solutions = new Solution[14];
+        public static Decision[] Decisions;
+        public static Solution[] Solutions;
         public static List<List<int>> Mapper = new List<List<int>>();
 
         public static void ReadDecisions()
         {
+            ExpertUtil.Decisions = new Decision[12];
+
             ExpertUtil.Decisions[0] = new Decision("Czy CMS działał wcześniej?", 1, -1);
             ExpertUtil.Decisions[1] = new Decision("Czy widzisz coś na stronie?", 2, 3);
             ExpertUtil.Decisions[2] = new Decision("Czy wyświetla się jakiś błąd?", -1, 4);
@@ -29,6 +31,8 @@ namespace es_l3_cms
 
         public static void ReadSolutions()
         {
+            ExpertUtil.Solutions = new Solution[14];
+
             ExpertUtil.Solutions[0] = new Solution("Zainstaluj go", new int[,] { { 0, 0 } });
             ExpertUtil.Solutions[1] = new Solution("Problem opisany w błędzie", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 1 } });
             ExpertUtil.Solutions[2] = new Solution("Strona działa", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 1 } });
@@ -87,7 +91,7 @@ namespace es_l3_cms
         {
             List<int> list = new List<int>();
             list.Add(it);
-            list.Add(answer);
+            list.Add(answer == 0 ? 0 : 1);
 
             return list;
         }
