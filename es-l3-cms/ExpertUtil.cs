@@ -44,7 +44,7 @@ namespace es_l3_cms
             ExpertUtil.Solutions[8] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 1 }, { 10, 1 }, { 9, 0 } });
             ExpertUtil.Solutions[9] = new Solution("Cofnij zmiany", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 0 }, { 9, 1 } });
             ExpertUtil.Solutions[10] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 0 }, { 9, 0 } });
-            ExpertUtil.Solutions[11] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 0 }, { 8, 0 } });
+            ExpertUtil.Solutions[11] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 1 }, { 8, 0 } });
             ExpertUtil.Solutions[12] = new Solution("Strona jest prywatna", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 1 }, { 8, 1 }, { 11, 1 } });
             ExpertUtil.Solutions[13] = new Solution("Usuń wszystkie skrypty", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 1 }, { 8, 1 }, { 11, 0 } });
         }
@@ -82,8 +82,6 @@ namespace es_l3_cms
 
             Console.WriteLine("Nie znam rozwiązania.");
             Console.Read();
-            return;
-
         }
 
         public static List<int> PrepareMap(int it, int answer)
