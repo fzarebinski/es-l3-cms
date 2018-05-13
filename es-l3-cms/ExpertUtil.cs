@@ -97,7 +97,10 @@ namespace es_l3_cms
 
         public static int Ask()
         {
-            return int.Parse(Console.ReadLine());
+            int reply;
+            bool parsed = int.TryParse(Console.ReadLine(), out reply);
+
+            return (parsed ? reply : 0);
         }
     }
 }
