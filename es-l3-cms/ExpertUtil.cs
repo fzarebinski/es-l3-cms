@@ -33,20 +33,20 @@ namespace es_l3_cms
         {
             ExpertUtil.Solutions = new Solution[14];
 
-            ExpertUtil.Solutions[0] = new Solution("Zainstaluj go", new int[,] { { 0, 0 } });
-            ExpertUtil.Solutions[1] = new Solution("Problem opisany w błędzie", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 1 } });
-            ExpertUtil.Solutions[2] = new Solution("Strona działa", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 1 } });
-            ExpertUtil.Solutions[3] = new Solution("Podłacz ją", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 0 } });
-            ExpertUtil.Solutions[4] = new Solution("Opłać ją", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 0 } });
-            ExpertUtil.Solutions[5] = new Solution("Serwer padł", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 0 } });
-            ExpertUtil.Solutions[6] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 1 }, { 10, 0 } });
-            ExpertUtil.Solutions[7] = new Solution("Cofnij zmiany", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 1 }, { 10, 1 }, { 9, 1 } });
-            ExpertUtil.Solutions[8] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 1 }, { 10, 1 }, { 9, 0 } });
-            ExpertUtil.Solutions[9] = new Solution("Cofnij zmiany", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 0 }, { 9, 1 } });
-            ExpertUtil.Solutions[10] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 0 }, { 9, 0 } });
-            ExpertUtil.Solutions[11] = new Solution("Napisz do pomocy technicznej", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 1 }, { 8, 0 } });
-            ExpertUtil.Solutions[12] = new Solution("Strona jest prywatna", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 1 }, { 8, 1 }, { 11, 1 } });
-            ExpertUtil.Solutions[13] = new Solution("Usuń wszystkie skrypty", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 1 }, { 8, 1 }, { 11, 0 } });
+            ExpertUtil.Solutions[0] = new Solution("CMS nie jest zainstalowany, zainstaluj go", new int[,] { { 0, 0 } });
+            ExpertUtil.Solutions[1] = new Solution("Dokładny opis błędu jest wyświetlony na stronie", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 1 } });
+            ExpertUtil.Solutions[2] = new Solution("Strona działa poprawnie", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 1 } });
+            ExpertUtil.Solutions[3] = new Solution("Należy podłączyć domenę", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 0 } });
+            ExpertUtil.Solutions[4] = new Solution("Należy opłacić domenę", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 0 } });
+            ExpertUtil.Solutions[5] = new Solution("Serwer przestał działać, skontaktuj się z usługodawcą", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 0 } });
+            ExpertUtil.Solutions[6] = new Solution("Wystąpił bład programistyczny lub wewnętrzny błąd serwera, skontaktuj się z pomocą techniczną", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 1 }, { 10, 0 } });
+            ExpertUtil.Solutions[7] = new Solution("Cofnij wprowadzone zmiany w skryptach, uszkodziły on strukturę CMSa", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 1 }, { 10, 1 }, { 9, 1 } });
+            ExpertUtil.Solutions[8] = new Solution("Wystąpił bład programistyczny lub wewnętrzny błąd serwera, skontaktuj się z pomocą techniczną", new int[,] { { 0, 1 }, { 1, 0 }, { 3, 1 }, { 5, 1 }, { 7, 1 }, { 10, 1 }, { 9, 0 } });
+            ExpertUtil.Solutions[9] = new Solution("Cofnij wprowadzone zmiany w skryptach, uszkodziły on strukturę CMSa", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 0 }, { 9, 1 } });
+            ExpertUtil.Solutions[10] = new Solution("Wystąpił bład programistyczny lub wewnętrzny błąd serwera, skontaktuj się z pomocą techniczną", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 0 }, { 9, 0 } });
+            ExpertUtil.Solutions[11] = new Solution("Wystąpił bład programistyczny lub wewnętrzny błąd serwera, skontaktuj się z pomocą techniczną", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 1 }, { 8, 0 } });
+            ExpertUtil.Solutions[12] = new Solution("Strona jest prywatna, musisz ją upublicznić", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 1 }, { 8, 1 }, { 11, 1 } });
+            ExpertUtil.Solutions[13] = new Solution("Usuń wszystkie wprowadzone skrypty na stronie", new int[,] { { 0, 1 }, { 1, 1 }, { 2, 0 }, { 4, 0 }, { 6, 1 }, { 8, 1 }, { 11, 0 } });
         }
 
         public static void PrintQuestion(int it = 0)
