@@ -7,6 +7,8 @@ This is simple console apllication, so just compile and answer on some questions
 
 Technically the project contains two main classes `Decision` and `Solution`. Using this two classes you can create a decision tree and declare solutions for every situation. `ExpertUtil` is a class used only to load sample data and generate view.
 
+Decision tree is available in file `diagram.png` in the repository.
+
 ## Is it properly implementation?
 Yes, but there can be some edge cases where apllication can be crashed.
 
